@@ -1,2 +1,2 @@
 # Web-Development
-# Designing resoponsive web pages using HTML,CSS and JavaScript.
+## Designing responsive web pages using HTML, CSS, and JavaScript.
