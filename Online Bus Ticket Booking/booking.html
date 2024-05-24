@@ -1,0 +1,86 @@
+<!DOCTYPE html5>
+<html>
+<head>
+<title>Book Tickets</title>
+<meta charset="UTF-8">
+<style>
+.oooo{
+background-color: lavender;
+}
+.header {
+background-color: lavender;
+text-align: center;
+
+font-family: 'Times New Roman', Times, serif;
+}
+.header a {
+color:black;
+}
+</style>
+</head>
+<body>
+<header class="header">
+<nav>
+    <a href="homepage.html">HOME</a>|
+    <a href="busbooking.html">BOOK TICKETS</a>|
+    <a href="busbookingaboutus.html">ABOUT US</a>
+</nav>
+</header>
+<div class="oooo">
+<h1 style="font-family: 'Times New Roman', Times,
+serif;"><center><b>Book Your Tickets</b></center></h1>
+<h3 style="font-family: 'Times New Roman', Times,
+serif;"><center>Fill out the form to book your tickets</center></h3>
+</div>
+<form class="form" action="confirmationexp2.html" method="post" style="background-color: lavender;">
+<hr color="white">
+<label for="fname">First Name:</label><br>
+<input type="text" id="fname" name="fname" required><br><br>
+<label for="lname">Last Name:</label><br>
+<input type="text" id="lname" name="lname"><br><br>
+<label for="dob">Date of Birth</label><br>
+<input type="date" id="dob" name="dob"><br><br>
+<label for="gender">Gender:</label><br><br>
+<input type="radio" id="male" name="gender" value="Male">
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="gender" value="Female">
+<label for="female">Female</label><br>
+<input type="radio" id="other" name="gender" value="Prefer Not
+to Say">
+<label for="other">Prefer Not to Say</label><br><br>
+<label for="dot">Date of Travel: </label>
+<input type="date" id="dot" name="dot"><br><br>
+<label for="From">From:</label>
+<select name="From" id="From" required>
+<option value="" disabled selected>Select your
+city</option>
+<option value="Kochi">Kochi</option>
+<option value="Kannur">Kannur</option>
+<option value="MarineDrive">Marine Drive</option>
+<option value="Aroor">Aroor</option>
+<option value="Thrissur">Thrissur</option>
+</select><br><br>
+<label for="to">Destination:</label>
+<select name="From" id="From" required>
+<option value="" disabled selected>Select your
+city</option>
+<option value="Kochi">Kochi</option>
+<option value="Kannur">Kannur</option>
+<option value="MarineDrive">Marine Drive</option>
+<option value="Aroor">Aroor</option>
+<option value="Thrissur">Thrissur</option>
+</select><br><br>
+<label for="contact">Contact Number:</label><br>
+<input type="number" id="contact" name="contact"
+maxlength="10" required><br><br>
+<label for="email">EmailId: </label><br>
+<input type="email" id="email" name="email" required><br><br>
+<label for="address">Address:</label><br>
+<textarea id="address" name="address" rows="4"
+cols="50"></textarea><br><br>
+<center><input type="submit" value="Submit"><br>
+<input type="reset" value="Reset"></center>
+<hr color="white">
+</form>
+</body>
+</html>
