@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Array Operations</title>
+    <style>
+        h1 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+        }
+        #output {
+            margin-top: 20mm;
+            text-align: center;
+        }
+        body {
+            background-color: lavender;
+        }
+        input, button {
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Array Operations</h1>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas" />
+    <button id="processButton">Process Array</button>
+    <div id="output"></div>
+    <script>
+        // Function to find the sum of an array
+        function sumArray(arr) {
+            return arr.reduce((sum, num) => sum + num, 0);
+        }
+
+        // Function to sort an array
+        function sortArray(arr) {
+            for (let i = 0; i < arr.length - 1; i++) {
+                for (let j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                    }
+                }
+            }
+            return arr;
+        }
+
+        // Function to validate input
+        function validateInput(input) {
+            return input.split(',').every(num => !isNaN(num) && num.trim() !== '');
+        }
+
+        document.getElementById('processButton').addEventListener('click', () => {
+            const userInput = document.getElementById('arrayInput').value;
+            
+            // Validate user input
+            if (!validateInput(userInput)) {
+                alert('Please enter a valid array of numbers separated by commas.');
+                return;
+            }
+
+            // Convert input string to an array of numbers
+            const array = userInput.split(',').map(Number);
+
+            // Find sum of array
+            const sum = sumArray(array);
+
+            // Sort array
+            const sorted = sortArray([...array]); // Using spread operator to create a copy of the array
+
+            // Display the output in the page
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = `
+                <p>Input array: ${array.join(", ")}</p>
+                <p>Sum: ${sum}</p>
+                <p>Sorted array: ${sorted.join(", ")}</p>
+            `;
+
+            // Display the output using alert dialogs
+            alert(`Input array: ${array.join(", ")}\nSum: ${sum}\nSorted array: ${sorted.join(", ")}`);
+        });
+    </script>
+</body>
+</html>
